@@ -1,0 +1,80 @@
+key,value
+instance,IRIS
+linux hostname,formation-iris
+customer,InterSystems IRIS Community
+version string,IRIS for UNIX (Ubuntu Server LTS for ARM64 Containers) 2023.1.1 (Build 380U) Fri Jul 7 2023 23:37:22 EDT
+operating system,Ubuntu
+profile run,"Profile run ""30mins"" started by user ""CSP Gateway"" at 10:22:33 on Jul 25 2023."
+run over,Run over 1800 intervals of 1 seconds.
+up instance 1,>IRIS              2023.1.1.380.0co  1972   /usr/irissys
+IRISSYS,/usr/irissys/mgr/
+alternate journal,/usr/irissys/mgr/journal/
+current journal,/usr/irissys/mgr/journal/
+DaysBeforePurge,2
+freeze,0
+WebServer,1
+MaxServerConn,1
+MaxServers,2
+globals,"0,0,0,0,0,0"
+gmheap,0
+jrnbufs,64
+locksiz,0
+memlock,0
+overview,Linux/ARM64~UNIX
+routines,0
+wijdir,
+mgstat header,"/usr/irissys/mgr/20230725_102233_30mins_18.log,MGSTATv2.9a,wdcycle=40^10^80^4,globalbuffers=3996MB:0^0^3996^0^0^0,routinebuffers=397MB:0^49^0^149^0^199,numberofcpus=5:AArch64^1^5,productversion=IRIS for UNIX (Ubuntu Server LTS for ARM64 Containers) 2023.1.1 (Build 380U) Fri Jul 7 2023 23:37:22 EDT"
+number cpus,5
+max locked memory,82000
+Shared memory ipcs 0,------ Shared Memory Segments --------
+Shared memory ipcs 1,key        shmid      owner      perms      bytes      nattch     status
+Shared memory ipcs 2,0xbc3d0232 0          irisowner  660        5299056640 43
+Shared memory ipcs 3,"Total shared memory used: 5,053 MB"
+Shared memory segment total,5299056640
+filesystem df 0,Filesystem     1M-blocks   Used Available Use% Mounted on
+filesystem df 1,overlay           402846  92599    289751  25% /
+filesystem df 2,tmpfs                 64      0        64   0% /dev
+filesystem df 3,shm                   64      3        62   5% /dev/shm
+filesystem df 4,grpcfuse          948585 583809    364777  62% /data
+filesystem df 5,/dev/vda1         402846  92599    289751  25% /etc/hosts
+filesystem df 6,tmpfs               7994      0      7994   0% /sys/firmware
+kernel.shmall,18446744073692774399
+kernel.shmmax,18446744073692774399
+vm.nr_hugepages,0
+swappiness,60
+memory MB,15987
+asyncwij,0
+wduseasyncio,0
+processor model,Unknown Processor
+warning 1,** Insecure Private Webserver Enabled! **
+warning 2,Journal freeze on error is not enabled. If journal IO errors occur database activity that occurs during this period cannot be restored. 
+warning 3,Primary Journal is the same as Alternate Journal
+globals total MB,0
+routines total MB,0
+warning 4,gmheap 0 size does not support parallel dejournaling
+warning 5,locksiz 0 is less than IRIS default (16777216)
+warning 6,WIJ in Installation Directory
+warning 7,swappiness is 60. For databases 5 is recommended to adjust how aggressive the Linux kernel swaps memory pages to disk. 
+warning 8,memlock=0 does not enforce Huge/Large pages
+memory GB,16
+shared memory MB,0
+shared memory calc,globals 0 MB + routines 0 MB + gmheap 0 MB
+Estimated total IRIS shared memory,380
+Estimated total IRIS shared memory text,"Estimated total shared memory (MB):
+[global buffers in MB] * 1.08 + [routine buffers in MB] * 1.02 + [gmheap in MB] + 
+  2 * [number of logical CPUs] + [jrnbufs in MB] + 2 * ( [MaxServerConn] + [MaxServers]) + 300 [overall fixed padding]
+
+[0] * 1.08 + [0] * 1.02 + [0] + 
+  2 * [5] + [64] + 2 * ( [1] + [2]) + 300 [overall fixed padding]
+
+See https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ARES#ARES_memory_plan_estimate
+"
+75pct memory MB,11990
+75pct memory number huge pages,5995
+warning 9,HugePages are not set. Consider huge page memory space for production instances to improve performance and efficiency and to protect the shared memory from paging out. Specifying HugePages much higher than the shared memory amount is not advisable because the unused memory is not available to other components.
+recommend 1,"Set HugePages, see IRIS documentation: https://docs.intersystems.com/irislatest/csp/docbook/Doc.View.cls?KEY=GCI_prepare_install#GCI_memory_big_linux "
+recommend 2,"Total memory is 15,987 MB, 75% of total memory is 11,990 MB."
+recommend 3,Shared memory (globals+routines+gmheap+other) is 0 MB. (0% of total memory).
+recommend 4,Number of HugePages for 2048 KB page size for 380 MB is 190
+pass 1,Kernel shared memory limit is at default
+platform,N/A

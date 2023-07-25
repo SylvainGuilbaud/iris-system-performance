@@ -1,0 +1,13 @@
+yaspe:
+  Site: InterSystems IRIS Community
+  Hostname: formation-iris
+  Instance: IRIS
+  Operating system: Ubuntu
+  Platform: N/A
+  CPUs: 5
+  Processor model: Unknown Processor
+  Memory: 16 GB
+  Shared memory: globals 0 MB + routines 0 MB + gmheap 0 MB = 0 MB
+  Version: IRIS for UNIX (Ubuntu Server LTS for ARM64 Containers) 2023.1.1 (Build 380U) Fri Jul 7 2023 23-37-22 EDT
+  Date collected: Profile run "30mins" started by user "CSP Gateway" at 10-22-33 on Jul 25 2023.
+

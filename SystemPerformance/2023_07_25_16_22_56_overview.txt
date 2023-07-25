@@ -1,0 +1,75 @@
+System Summary for InterSystems IRIS Community
+
+Hostname         : formation-iris
+Instance         : IRIS
+Operating system : Ubuntu
+Platform         : N/A
+CPUs             : 5
+Processor model  : Unknown Processor
+Memory           : 16 GB
+Shared memory    : globals 0 MB + routines 0 MB + gmheap 0 MB = 0 MB
+Version          : IRIS for UNIX (Ubuntu Server LTS for ARM64 Containers) 2023.1.1 (Build 380U) Fri Jul 7 2023 23:37:22 EDT
+Date collected   : Profile run "30mins" started by user "CSP Gateway" at 10:22:33 on Jul 25 2023.
+
+Passes:
+- Kernel shared memory limit is at default
+
+Warnings:
+- ** Insecure Private Webserver Enabled! **
+- Journal freeze on error is not enabled. If journal IO errors occur database activity that occurs during this period cannot be restored. 
+- Primary Journal is the same as Alternate Journal
+- gmheap 0 size does not support parallel dejournaling
+- locksiz 0 is less than IRIS default (16777216)
+- WIJ in Installation Directory
+- swappiness is 60. For databases 5 is recommended to adjust how aggressive the Linux kernel swaps memory pages to disk. 
+- memlock=0 does not enforce Huge/Large pages
+- HugePages are not set. Consider huge page memory space for production instances to improve performance and efficiency and to protect the shared memory from paging out. Specifying HugePages much higher than the shared memory amount is not advisable because the unused memory is not available to other components.
+
+Recommendations:
+- Review and fix warnings above
+- Set HugePages, see IRIS documentation: https://docs.intersystems.com/irislatest/csp/docbook/Doc.View.cls?KEY=GCI_prepare_install#GCI_memory_big_linux 
+- Total memory is 15,987 MB, 75% of total memory is 11,990 MB.
+- Shared memory (globals+routines+gmheap+other) is 0 MB. (0% of total memory).
+- Number of HugePages for 2048 KB page size for 380 MB is 190
+
+All instances on this host:
+- >IRIS              2023.1.1.380.0co  1972   /usr/irissys
+
+Storage:
+Current journal        : /usr/irissys/mgr/journal/
+Alternate journal      : /usr/irissys/mgr/journal/
+Days before purge      : 2
+WIJ directory          : 
+
+Additional:
+IRISSYS                : /usr/irissys/mgr/
+
+Filesystem (df):
+Filesystem     1M-blocks   Used Available Use% Mounted on
+overlay           402846  92599    289751  25% /
+tmpfs                 64      0        64   0% /dev
+shm                   64      3        62   5% /dev/shm
+grpcfuse          948585 583809    364777  62% /data
+/dev/vda1         402846  92599    289751  25% /etc/hosts
+tmpfs               7994      0      7994   0% /sys/firmware
+
+--------------------------------------------------------------------------------------------------
+Estimated total shared memory for IRIS 2022.1 and later: 380 (MB)
+
+Estimated total shared memory (MB):
+[global buffers in MB] * 1.08 + [routine buffers in MB] * 1.02 + [gmheap in MB] + 
+  2 * [number of logical CPUs] + [jrnbufs in MB] + 2 * ( [MaxServerConn] + [MaxServers]) + 300 [overall fixed padding]
+
+[0] * 1.08 + [0] * 1.02 + [0] + 
+  2 * [5] + [64] + 2 * ( [1] + [2]) + 300 [overall fixed padding]
+
+See https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ARES#ARES_memory_plan_estimate
+
+
+Shared memory from ipcs -m:
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status
+0xbc3d0232 0          irisowner  660        5299056640 43
+Total shared memory used: 5,053 MB
+
+End of report.
