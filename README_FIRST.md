@@ -7,11 +7,15 @@ To create a docker image on your own system:
 - Download the source files
 - logon to docker with: `docker login`
 - `cd` to folder with source files
-- Build `yaspe` container image: `./build.sh` | `./build.bat`
+- Build `yaspe` container image: 
+on Linux/Mac
+`./build.sh` 
+or on Windows :
+`./build.bat`
 
 ## Run the command over a SystemPerformance file
 
-- Linux/MacOS
+- Linux/Mac
 
 For Intel:
 
