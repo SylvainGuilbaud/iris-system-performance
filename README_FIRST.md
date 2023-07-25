@@ -8,26 +8,28 @@ To create a docker image on your own system:
 - logon to docker with: `docker login`
 - `cd` to folder with source files
 - Build `yaspe` container image: 
-on Linux/Mac
-`./build.sh` 
-or on Windows :
-`./build.bat`
+  - on Linux/Mac : ```./build.sh```
+  - or on Windows : ```./build.bat```
+## Copy your performance reports files in the ./SystemPerformance directory
+
+```
+./SystemPerformance/<copy your .html files here>
+```
+## Replace in the run.sh or run.bat files the .html file with your file
+
+```
+-i /data/<replace with your filename>.html
+```
 
 ## Run the command over a SystemPerformance file
 
 - Linux/Mac
 
-For Intel:
+  - For Intel: ```./run.sh```
 
-`./run.sh`
+  - For Apple M1: ```./runM1.sh```
 
-For Apple M1:
-
-`./runM1.sh`
-
-- Windows
-
-`./run.bat`
+- Windows = ```./run.bat```
 
 ```commandline
 usage: yaspe [-h] [-v] [-i "/path/file.html"] [-x] [-n] [-a] [-o "output file prefix"] [-e "/path/filename_SystemPerformance.sqlite"] [-c] [-p] [-s] [-d DISK_LIST [DISK_LIST ...]] [-l "string to split on"]
